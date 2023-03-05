@@ -1,0 +1,102 @@
+.error {
+    color: red;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+}
+
+header.left {
+    width: fit-content;
+}
+
+header.right {
+    width: fit-content;
+}
+
+/*set as table to align everything*/
+form {
+    display: table;
+    padding-left: 5em;
+}
+
+form * {
+    padding-bottom: 1em;
+}
+
+form p {
+    display: table-row;
+}
+
+form label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
+
+form input, textarea {
+    display: table-cell;
+    height: 18pt;
+}
+
+form span {
+    display: table-cell;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    /*display: table;*/
+    clear: both;
+}
+
+.smallImg {
+    max-height: 48pt;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+header {
+    display: flex;
+    background-color: #FC9F5B;
+}
+
+footer {
+    text-align: center;
+    background-color: #FC9F5B;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-right: 16px solid white; /*needed to match he header because, for some reason there is a border on it*/
+    border-bottom: 7px solid white;
+}
+
+body {
+    background-color: #FFFFFC;
+    color: #171511;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+main {
+    padding-left: 2em;
+}
+
+a:link {
+    color: #1B9AAA;
+}
+
+a:visited {
+    color: #C04ABC;
+}
+
+a:hover {
+    color: #EF476F;
+}

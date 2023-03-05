@@ -1,0 +1,44 @@
+Labrador original image (CC0 license): https://pxhere.com/en/photo/655507
+Top hat original image (CC0 license): https://www.rawpixel.com/image/3364012/free-illustration-image-top-hat-accessory-antique
+
+process: 
+import labrador and tophat photos into photoshop, then use the select and mask tool to create a mask of the subject.
+move the mask to a layer of pure white, then put a layer below it that is black.
+for the tophat I added a band using the brush on the mask layer.
+import the black and white labrador and tophat photos into illustrator and use image trace black and white logo.
+for the tophat, I only made the white parts visible, then had to add the band in black and group those together.
+arrange, and export to a .png (labracabrador logo tilt hat.png).
+convert .png to .ico.
+
+reasoning:
+One night I was thinking that this website needs a name and I wanted it to be a pun about media, so I googled "puns." I found a few funny puns, but nothing was media related. At some point, I came across the labracabrador pun ("What do you call a magicians dog? A labracabrador!"), and that pun was stuck in my head for the next hour, so I just had to make that the website name. 
+After deciding the name, I figured I would need a logo, so I tried looking online for a labrador wearing a tophat, but couldn;t find any images of that. So I decided to make my own. I can't draw so I got some free use images of a labrador and tophat, then used illustrator and photoshop to make the logo.
+
+locations:
+ch 01: All
+ch 02: 
+ch 03: 
+ch 04: 
+ch 05: 
+ch 06: 
+ch 07: 
+ch 08: 
+ch 09: 
+ch 10: 
+ch 11: 
+ch 12: 
+ch 13: 
+ch 14: 
+ch 15: 
+ch 16: 
+ch 17: 
+ch 18: 
+ch 19: 
+ch 20: 
+ch 21: 
+ch 22: 
+ch 23: 
+ch 24: 
+ch 25: 
+ch 26: 
+ch 27: 
