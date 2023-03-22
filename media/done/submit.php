@@ -30,17 +30,19 @@ function upload(): string
         $uploadOk = 0;
     }
 
-    $media = new Media(NULL, $_POST['username'], $_POST['title'], $_POST['desc'], $targetFile, $_POST['type']);
+    $user = new user(NULL, $_POST['username']);
+    $user->validate($_POST['key']);
+    $media = new Media(NULL, $user, $_POST['title'], $_POST['desc'], $targetFile, $_POST['type']);
 
     if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
-        echo $media->drop();
+        $media->drop();
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["media"]["tmp_name"], $targetFile)) {
             echo $_POST['title'] . " has been uploaded.";
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "Sorry, there was an error uploading your file.";//TODO change into an error
         }
     }
     return $targetFile;

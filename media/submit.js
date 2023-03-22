@@ -58,7 +58,7 @@ const validateType = (mime) => {
                 case 'pdf':
                 case 'rtf':
                 case 'x-latex':
-                    $('type').value = '';
+                    $('type').value = 'document';
                     return true;
 
                 default:
@@ -198,8 +198,9 @@ const pressSubmit = () => {
     }
 
     // noinspection JSBitwiseOperatorUsage
-    if(validateMedia() & checkFilled()) {           //single & so that PHP runs both functions
+    if(validateMedia() & checkFilled()) {           //single & so that JS runs both functions
         console.log('valid');
+        console.log($('type').value);
         document.forms["submission"].requestSubmit();
     }
 };

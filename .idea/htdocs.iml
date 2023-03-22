@@ -6,6 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/img" />
       <excludeFolder url="file://$MODULE_DIR$/webalizer" />
       <excludeFolder url="file://$MODULE_DIR$/xampp" />
+      <excludeFolder url="file://$MODULE_DIR$/dev" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/uploads" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -43,7 +43,7 @@ head('Submit Content');
     <input type="button" value="submit" id="Submit" onclick="pressSubmit()">
     </p>
 
-    <input type="hidden" id="type" name="type" value="null">
+    <input type="hidden" id="type" name="type" value="">
 </form>
 <div id="filetype"></div>
 <script src="/media/submit.js"></script> <!--Place the script tag at the end of file so that it will only load once everything else has loaded-->
