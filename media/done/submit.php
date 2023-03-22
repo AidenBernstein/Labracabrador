@@ -1,5 +1,4 @@
-<?php //TODO implement mysql
-//TODO create a media class
+<?php
 include('../../include/headerFooter.php');
 include('../mediaClass.php');
 head('Media Submitted');
@@ -31,20 +30,24 @@ function upload(): string
     }
 
     $user = new user(NULL, $_POST['username']);
-    $user->validate($_POST['key']);
-    $media = new Media(NULL, $user, $_POST['title'], $_POST['desc'], $targetFile, $_POST['type']);
-
-    if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-        $media->drop();
-    // if everything is ok, try to upload file
-    } else {
-        if (move_uploaded_file($_FILES["media"]["tmp_name"], $targetFile)) {
-            echo $_POST['title'] . " has been uploaded.";
+    $code = $user->validate($_POST['key']) ? 1 : 0;
+    try {
+        $media = new Media(NULL, $user, $_POST['title'], $_POST['desc'], $targetFile, $_POST['type']);
+        if ($uploadOk == 0) {
+            $media->drop(); // if everything is ok, try to upload file
+            throw new Exception('<p>Upload Error<br /></p>', 2121);
         } else {
-            echo "Sorry, there was an error uploading your file.";//TODO change into an error
+            if (move_uploaded_file($_FILES["media"]["tmp_name"], $targetFile)) {
+                echo '<p>' . $_POST['title'] . " has been uploaded.</p>";
+            } else {
+                throw new Exception('<p>Upload Error<br /></p>', 2122);
+            }
         }
+    } catch (Exception $e) {
+        $message = "<div class='error'><b>ERROR</b><br/>CODE: {$e->getCode()}<br />MESSAGE: {$e->getMessage()}<br />{$e->getTraceAsString()}</div>";
+        echo $message;
     }
+
     return $targetFile;
 }
 

@@ -34,10 +34,10 @@ class Media
             $this->getInfo();
         } else if($user && $title && $desc && $fileName && $type) {
             $this->addToDB();
+        } else if(!$this->user->valid){
+            throw new Exception('<p>Error in Media Class Constructor<br />Object Contents: </p><br /><pre>' . var_dump($this) . '</pre>', 2031);
         } else {
-            echo 'error lmao <br/> <pre>'; //TODO change to an actual error
-            var_dump($this);
-            echo '</pre>';
+            throw new Exception('<p>Error in Media Class Constructor<br />Object Contents: </p><br /><pre>' . var_dump($this) . '</pre>', 2032);
         }
 
     }
@@ -67,9 +67,6 @@ class Media
     }
 
     private function addToDB() {
-        if (!$this->user->valid) {
-            echo 'error'; //TODO make error
-        }
 
         $db = connectDB();
 

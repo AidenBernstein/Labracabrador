@@ -23,20 +23,20 @@ class user
 
 
         if($create != 0){
-            if($userName){
+            if($userName && $userKey && $perm){
                 $this->createUser();
             } else {
-                echo 'need username to create'; //TODO make an error
+                throw new Exception('<p>Error in User Class Constructor<br />Object Contents: </p><br /><pre>' . var_dump($this) . '</pre>', 4031);
             }
         } else {
             if(!$userName && !$uid){
-                echo 'need uid or name'; //TODO make an error
+                throw new Exception('<p>Error in Media Class Constructor<br />Object Contents: </p><br /><pre>' . var_dump($this) . '</pre>', 4032);
             } else if($userName) {
                 $this->uid = $this->getUID();
             } else if ($uid) {
                 $this->userName = $this->getUsername();
-            } else { //TODO make an error
-                echo 'oopsy daisies';
+            } else {
+                throw new Exception('<p>Error in Media Class Constructor<br />Object Contents: </p><br /><pre>' . var_dump($this) . '</pre>', 4033);
             }
         }
 
@@ -128,6 +128,7 @@ class user
 
     public function validate($key) {
         $this->valid = ($this->userKey == $key);
+        return $this->valid;
     }
 }
 

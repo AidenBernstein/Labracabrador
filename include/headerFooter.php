@@ -1,5 +1,5 @@
-<?php //TODO replace getInclude() with $_SERVER['DOCUMENT_ROOT'] or some other clever thing
-//I use a really weird combination of javascript and php in this file. sorry.
+<?php
+//I use JS with this code to have a responsive header
 //chapter 3: file(), implode()
 //chapter 5: functions
 
@@ -9,6 +9,7 @@
 function getRoot(): string
 {
     $url = explode("/", $_SERVER['REQUEST_URI']);
+    $root = '';
     switch($url[count($url)- 2]) {
         case 'media':
         case 'user':
@@ -25,7 +26,7 @@ function getRoot(): string
             break;
 
         default:
-            echo 'Error: issue in URL, unable to find root'; //TODO convert to exception]
+            echo 'Error: issue in URL, unable to find root';
             break;
     }
     return $root;
@@ -97,44 +98,6 @@ function head($title) {
         rightcol.onclick = changePun;
     };
     
-    //    /*display the short form of #info
-    //    infoShort(): void
-    //     */
-    //    const infoShort = () => {
-    //        const info = $('info');
-    //        const logo = info.appendChild(document.createElement('img'));
-    //        const lab = info.appendChild(document.createElement('span'));
-    //        
-    //        logo.src = '{$getRoot()}include/logo-big.png';
-    //        lab.innerHTML = ' Labracabrador: $title';
-    //        
-    //        logo.classList.add('smallImg');
-    //    };
-    //    
-    //    /*remove all children from info
-    //    filicide(): void
-    //     */
-    //    const filicide = () => {
-    //        while($('info').firstChild){ //remove all children from info
-    //            $('info').removeChild($('info').firstChild);
-    //        }
-    //    };
-    //    
-    //    /*switch between the full and short version of #info
-    //    infoSwitch(): void
-    //     */
-    //     const infoSwitch = () => {
-    //        if ($('info').scrollTop() > 5) { 
-    //            filicide();
-    //            infoFull();
-    //        } else {
-    //            filicide();
-    //            infoShort();
-    //        }
-    //    }
-    //     
-    //    document.addEventListener("scroll", (event) => infoSwitch)
-    
     infoFull()
     JS;
 
@@ -188,7 +151,7 @@ function foot() {
     HTML;
 }
 
-function connectDB() {
+function connectDB(): mysqli {
     $db = new mysqli('localhost', 'labPHP', 'securePassword', 'labracabrador');
     $db->select_db('labracabrador');
     return $db;
