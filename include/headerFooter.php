@@ -3,8 +3,12 @@
 //chapter 3: file(), implode()
 //chapter 5: functions
 
+
+include('./mediaClass.php');
+include('./user/userClass.php');
+
 /*return the location of the 'root/' folder
- * getInclude(): str
+ * @return string
  */
 function getRoot(): string
 {
@@ -33,7 +37,7 @@ function getRoot(): string
 }
 
 /*return the contents of the /include/punList.txt' file, there is probably a more elegant way of doing this
- * punArray(): str
+ * @return string
  */
 function punArray(): string
 {
@@ -43,7 +47,7 @@ function punArray(): string
 }
 
 /*echo the site's header
- * head(str $title): void
+ * @return void
  */
 function head($title) {
     $punArray = 'punArray';
@@ -133,7 +137,7 @@ function head($title) {
 }
 
 /*echo the site's footer
- * foot(): void
+ * @return void
  */
 function foot() {
     /** @noinspection HtmlUnknownAnchorTarget */
@@ -151,8 +155,11 @@ function foot() {
     HTML;
 }
 
+/*return connection to db
+ * @return mysqli
+ */
 function connectDB(): mysqli {
     $db = new mysqli('localhost', 'labPHP', 'securePassword', 'labracabrador');
     $db->select_db('labracabrador');
-    return $db;
+    return @$db;
 }

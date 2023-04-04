@@ -1,4 +1,4 @@
-<?php
+<?php //TODO encrypt password with username and put in db
 include('../../include/headerFooter.php');
 head('User Created');
 function keygen($user): string
